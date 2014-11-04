@@ -10,6 +10,11 @@ Core library for shared objects of the Kobold testing framework.
 [![NPM](https://nodei.co/npm/kobold-core.png?downloads=true)](https://nodei.co/npm/kobold-core/)
 
 
+[API-Documentation](http://yahoo.github.io/kobold-core/docs/)
+
+[Coverage Report](http://yahoo.github.io/kobold-core/coverage/lcov-report/)
+
+
 **Table of Contents**
 * [Installation](#installation)
 * [Usage](#usage)
