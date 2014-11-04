@@ -1,0 +1,2580 @@
+{
+    "project": {
+        "name": "kobold-core",
+        "description": "Core library for shared objects of the Kobold testing framework.",
+        "version": "0.9.0"
+    },
+    "files": {
+        "lib/connectionAdapter/connectionAdapter.js": {
+            "name": "lib/connectionAdapter/connectionAdapter.js",
+            "modules": {},
+            "classes": {
+                "ConnectionAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/connectionAdapter/riakConnectionAdapter.js": {
+            "name": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "modules": {},
+            "classes": {
+                "RiakConnectionAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/keyValueModels/baseModel.js": {
+            "name": "lib/keyValueModels/baseModel.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/keyValueModels/company.js": {
+            "name": "lib/keyValueModels/company.js",
+            "modules": {},
+            "classes": {
+                "Company": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/keyValueModels/department.js": {
+            "name": "lib/keyValueModels/department.js",
+            "modules": {},
+            "classes": {
+                "Department": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/storageAdapter/fileStorageAdapter.js": {
+            "name": "lib/storageAdapter/fileStorageAdapter.js",
+            "modules": {},
+            "classes": {
+                "FileStorageAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/storageAdapter/keyValueStorageAdapter.js": {
+            "name": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "modules": {},
+            "classes": {
+                "KeyValueStorageAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/storageAdapter/storageAdapter.js": {
+            "name": "lib/storageAdapter/storageAdapter.js",
+            "modules": {},
+            "classes": {
+                "StorageAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "index.js": {
+            "name": "index.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "ConnectionAdapter": {
+            "name": "ConnectionAdapter",
+            "shortname": "ConnectionAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 15,
+            "description": "Connection adapter constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "_promise",
+                    "description": "",
+                    "type": "Promise"
+                }
+            ],
+            "itemtype": "property",
+            "type": "Object"
+        },
+        "RiakConnectionAdapter": {
+            "name": "RiakConnectionAdapter",
+            "shortname": "RiakConnectionAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 7,
+            "description": "Riak accessor class",
+            "extends": "ConnectionAdapter",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "schema",
+                            "description": "",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "'http'"
+                        },
+                        {
+                            "name": "host",
+                            "description": "",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "'localhost'"
+                        },
+                        {
+                            "name": "port",
+                            "description": "",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "8098"
+                        }
+                    ]
+                }
+            ],
+            "is_constructor": 1,
+            "itemtype": "property",
+            "type": "String"
+        },
+        "Company": {
+            "name": "Company",
+            "shortname": "Company",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/keyValueModels/company.js",
+            "line": 10,
+            "description": "Company accessor class",
+            "extends": "BaseModel",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Department": {
+            "name": "Department",
+            "shortname": "Department",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/keyValueModels/department.js",
+            "line": 8,
+            "description": "Department accessor class",
+            "extends": "BaseModel",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "is_constructor": 1
+        },
+        "FileStorageAdapter": {
+            "name": "FileStorageAdapter",
+            "shortname": "FileStorageAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 13,
+            "description": "File storage adapter",
+            "extends": "StorageAdapter",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "path",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "approvedFolderName",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "buildFolderName",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "highlightFolderName",
+                            "description": "",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "itemtype": "property",
+            "type": "String"
+        },
+        "KeyValueStorageAdapter": {
+            "name": "KeyValueStorageAdapter",
+            "shortname": "KeyValueStorageAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 10,
+            "description": "Key-Value storage adapter",
+            "extends": "StorageAdapter",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "connection",
+                            "description": "",
+                            "type": "ConnectionAdapter"
+                        },
+                        {
+                            "name": "company",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "department",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "project",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "job",
+                            "description": "",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "itemtype": "property",
+            "type": "ConnectionAdapter"
+        },
+        "StorageAdapter": {
+            "name": "StorageAdapter",
+            "shortname": "StorageAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 7,
+            "description": "Abstract storage adapter",
+            "itemtype": "property",
+            "type": "Object",
+            "params": [
+                {
+                    "name": "_build",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "_promise",
+                    "description": "",
+                    "type": "Promise"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 34,
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 36,
+            "description": "Initializes the source-adapter",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 46,
+            "description": "Makes a request and returns a promise",
+            "itemtype": "method",
+            "name": "_request",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "url",
+                            "description": "Url of host",
+                            "type": "String"
+                        },
+                        {
+                            "name": "method",
+                            "description": "Method of request",
+                            "type": "String"
+                        },
+                        {
+                            "name": "headers",
+                            "description": "Request headers",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "body",
+                            "description": "Body of request",
+                            "type": "String|Buffer",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "With {object} Response",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 72,
+            "description": "Gets the source-adapter promise",
+            "itemtype": "method",
+            "name": "getPromise",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 82,
+            "description": "Sets the promise",
+            "itemtype": "method",
+            "name": "setPromise",
+            "params": [
+                {
+                    "name": "promise",
+                    "description": "",
+                    "type": "Promise"
+                }
+            ],
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 93,
+            "description": "Gets all bucket names",
+            "itemtype": "method",
+            "name": "getBuckets",
+            "params": [
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {string[]} List of buckets",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 104,
+            "description": "Does the instance have a specific bucket?",
+            "itemtype": "method",
+            "name": "hasBucket",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {boolean} Bucket exists?",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 116,
+            "description": "Gets all bucket keys",
+            "itemtype": "method",
+            "name": "getBucketKeys",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {string[]} Bucket keys",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 128,
+            "description": "Does the instance have a specific key in a bucket?",
+            "itemtype": "method",
+            "name": "hasBucketKey",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {boolean} Bucket key exists?",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 141,
+            "description": "Gets an object",
+            "itemtype": "method",
+            "name": "getObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {Buffer}",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 153,
+            "description": "Gets an object as JSON",
+            "itemtype": "method",
+            "name": "getObjectAsJSON",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {*}",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 166,
+            "description": "Sets an object",
+            "itemtype": "method",
+            "name": "setObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Buffer|string"
+                },
+                {
+                    "name": "mimeType",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'application/octet-stream'"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 180,
+            "description": "Sets an object from JSON",
+            "itemtype": "method",
+            "name": "setObjectFromJSON",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 194,
+            "description": "Removes an object",
+            "itemtype": "method",
+            "name": "removeObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 206,
+            "description": "Removes all object of a bucket",
+            "itemtype": "method",
+            "name": "removeAllObjects",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/connectionAdapter.js",
+            "line": 219,
+            "description": "Type of class",
+            "itemtype": "property",
+            "name": "TYPE",
+            "type": "string",
+            "class": "ConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 25,
+            "description": "Initializes the source-adapter",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 39,
+            "description": "Gets the complete url for a path specified",
+            "itemtype": "method",
+            "name": "_getUrlWithPath",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 51,
+            "description": "Gets all bucket names",
+            "itemtype": "method",
+            "name": "getBuckets",
+            "params": [
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {string[]} List of buckets",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 75,
+            "description": "Does the instance have a specific bucket?",
+            "itemtype": "method",
+            "name": "hasBucket",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {boolean} Bucket exists?",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 89,
+            "description": "Gets all bucket keys",
+            "itemtype": "method",
+            "name": "getBucketKeys",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {string[]} Bucket keys",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 114,
+            "description": "Does the instance have a specific key in a bucket?",
+            "itemtype": "method",
+            "name": "hasBucketKey",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "filterFn",
+                    "description": "",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "With {boolean} Bucket key exists?",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 129,
+            "description": "Gets an object",
+            "itemtype": "method",
+            "name": "getObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {Buffer}",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 148,
+            "description": "Gets an object as JSON",
+            "itemtype": "method",
+            "name": "getObjectAsJSON",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {*}",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 163,
+            "description": "Sets an object",
+            "itemtype": "method",
+            "name": "setObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Buffer|string"
+                },
+                {
+                    "name": "mimeType",
+                    "description": "",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'application/octet-stream'"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 187,
+            "description": "Sets an object from JSON",
+            "itemtype": "method",
+            "name": "setObjectFromJSON",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 201,
+            "description": "Removes an object",
+            "itemtype": "method",
+            "name": "removeObject",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 218,
+            "description": "Removes all object of a bucket",
+            "itemtype": "method",
+            "name": "removeAllObjects",
+            "params": [
+                {
+                    "name": "bucket",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/connectionAdapter/riakConnectionAdapter.js",
+            "line": 244,
+            "description": "Type of class",
+            "itemtype": "property",
+            "name": "TYPE",
+            "type": "string",
+            "class": "RiakConnectionAdapter"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 9,
+            "description": "Key-Value model constructor",
+            "is_constructor": 1,
+            "itemtype": "property",
+            "name": "_options",
+            "type": "Object",
+            "class": "Company",
+            "subprops": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "_connection",
+                    "description": "",
+                    "type": "ConnectionAdapter"
+                },
+                {
+                    "name": "_data",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 33,
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 35,
+            "description": "Initializes the instance",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 44,
+            "description": "Gets the connection adapter",
+            "itemtype": "method",
+            "name": "getConnection",
+            "return": {
+                "description": "",
+                "type": "ConnectionAdapter"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 54,
+            "description": "Gets the model id",
+            "itemtype": "method",
+            "name": "getId",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 66,
+            "description": "Type of class",
+            "type": "string",
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/baseModel.js",
+            "line": 74,
+            "description": "Default filter that accepts everything",
+            "itemtype": "method",
+            "name": "filter",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/company.js",
+            "line": 51,
+            "description": "Lists the names of items",
+            "params": [
+                {
+                    "name": "connection",
+                    "description": "",
+                    "type": "ConnectionAdapter"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String[]"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/company.js",
+            "line": 61,
+            "description": "Gets a specific entry",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "BaseModel"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/company.js",
+            "line": 71,
+            "description": "Filter for item",
+            "params": [
+                {
+                    "name": "entry",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Company"
+        },
+        {
+            "file": "lib/keyValueModels/department.js",
+            "line": 31,
+            "description": "Lists the names of items",
+            "params": [
+                {
+                    "name": "connection",
+                    "description": "",
+                    "type": "ConnectionAdapter"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String[]"
+            },
+            "class": "Department"
+        },
+        {
+            "file": "lib/keyValueModels/department.js",
+            "line": 41,
+            "description": "Gets a specific entry",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "BaseModel"
+            },
+            "class": "Department"
+        },
+        {
+            "file": "lib/keyValueModels/department.js",
+            "line": 51,
+            "description": "Filter for item",
+            "params": [
+                {
+                    "name": "entry",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Department"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 32,
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 34,
+            "description": "Initializes the source-adapter",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 56,
+            "description": "Prepares the output folder",
+            "itemtype": "method",
+            "name": "_prepareFolder",
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 74,
+            "description": "Reads an image and returns a promise",
+            "itemtype": "method",
+            "name": "_readImage",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Image",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 95,
+            "description": "Writes an image and returns a promise",
+            "itemtype": "method",
+            "name": "_writeImage",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 117,
+            "description": "Reads a directory an returns all files found in the folder",
+            "itemtype": "method",
+            "name": "_readDir",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 129,
+            "description": "Reads a directory and filters for png files, removing the extensions",
+            "itemtype": "method",
+            "name": "_readDirAndFilter",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 144,
+            "description": "List filter for png extensions",
+            "itemtype": "method",
+            "name": "_pngFilter",
+            "params": [
+                {
+                    "name": "filename",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 157,
+            "description": "Gets the processing path",
+            "itemtype": "method",
+            "name": "_getPath",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 169,
+            "description": "Gets the approved path",
+            "itemtype": "method",
+            "name": "_getApprovedPath",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 180,
+            "description": "Gets the build path",
+            "itemtype": "method",
+            "name": "_getBuildPath",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 191,
+            "description": "Gets the highlight path",
+            "itemtype": "method",
+            "name": "_getHighlightPath",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 203,
+            "description": "Gets a list of currently approve screen names",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 215,
+            "description": "Gets a specific currently approved screen",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 228,
+            "description": "Archives a specific currently approved screen",
+            "itemtype": "method",
+            "name": "archiveCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 242,
+            "description": "Gets a list of approve screen names",
+            "itemtype": "method",
+            "name": "getApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 254,
+            "description": "Gets a specific approved screen",
+            "itemtype": "method",
+            "name": "getApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 267,
+            "description": "Archives a specific approved screen",
+            "itemtype": "method",
+            "name": "archiveApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 281,
+            "description": "Gets a list of build screen names",
+            "itemtype": "method",
+            "name": "getBuildScreenNames",
+            "return": {
+                "description": "With {string[]} List of build screen names",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 294,
+            "description": "Gets a specific build screen",
+            "itemtype": "method",
+            "name": "getBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage}",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 307,
+            "description": "Archives a specific build screen",
+            "itemtype": "method",
+            "name": "archiveBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 321,
+            "description": "Gets a list of highlight screen names",
+            "itemtype": "method",
+            "name": "getHighlightScreenNames",
+            "return": {
+                "description": "With {string[]} List of highlight screen names",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 334,
+            "description": "Gets a specific highlight screen",
+            "itemtype": "method",
+            "name": "getHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of highlight screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage}",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 347,
+            "description": "Archives a specific highlight screen",
+            "itemtype": "method",
+            "name": "archiveHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of highlight screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/fileStorageAdapter.js",
+            "line": 363,
+            "description": "Type of class",
+            "itemtype": "property",
+            "name": "TYPE",
+            "type": "string",
+            "class": "FileStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 36,
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 38,
+            "description": "Initializes the source-adapter",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 60,
+            "description": "Prepare a bucket",
+            "itemtype": "method",
+            "name": "_prepareBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 95,
+            "description": "Prepare the companies bucket",
+            "itemtype": "method",
+            "name": "_prepareCompanyBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 113,
+            "description": "Prepare the departments bucket",
+            "itemtype": "method",
+            "name": "_prepareDepartmentBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 131,
+            "description": "Prepare the projects bucket",
+            "itemtype": "method",
+            "name": "_prepareProjectBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 149,
+            "description": "Prepare the jobs bucket",
+            "itemtype": "method",
+            "name": "_prepareJobBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 168,
+            "description": "Prepare the build bucket",
+            "itemtype": "method",
+            "name": "_prepareBuildBucket",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 188,
+            "description": "Loads an image blob and returns a promise for it",
+            "itemtype": "method",
+            "name": "_loadImage",
+            "params": [
+                {
+                    "name": "blob",
+                    "description": "",
+                    "type": "Buffer"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Image",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 208,
+            "description": "Saves an image to a blob and returns a promise for it",
+            "itemtype": "method",
+            "name": "_blobImage",
+            "params": [
+                {
+                    "name": "image",
+                    "description": "",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "With {Buffer} Blob",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 229,
+            "description": "Gets the current approved-screen bucket",
+            "itemtype": "method",
+            "name": "_getCurrentApprovedScreenBucket",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 241,
+            "description": "Gets the approved-screen bucket",
+            "itemtype": "method",
+            "name": "_getApprovedScreenBucket",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 253,
+            "description": "Gets the highlight-screen bucket",
+            "itemtype": "method",
+            "name": "_getHighlightScreenBucket",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 265,
+            "description": "Gets the build-screen bucket",
+            "itemtype": "method",
+            "name": "_getBuildScreenBucket",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 278,
+            "description": "Key filter for bucket keys",
+            "itemtype": "method",
+            "name": "_bucketKeyFilter",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 291,
+            "description": "Gets a list of currently approve screen names",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 303,
+            "description": "Gets a specific currently approved screen",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 318,
+            "description": "Archives a specific currently approved screen",
+            "itemtype": "method",
+            "name": "archiveCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 335,
+            "description": "Gets a list of approve screen names",
+            "itemtype": "method",
+            "name": "getApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 347,
+            "description": "Gets a specific approved screen",
+            "itemtype": "method",
+            "name": "getApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 362,
+            "description": "Archives a specific approved screen",
+            "itemtype": "method",
+            "name": "archiveApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 379,
+            "description": "Gets a list of build screen names",
+            "itemtype": "method",
+            "name": "getBuildScreenNames",
+            "return": {
+                "description": "With {string[]} List of build screen names",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 391,
+            "description": "Gets a specific build screen",
+            "itemtype": "method",
+            "name": "getBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage}",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 406,
+            "description": "Archives a specific build screen",
+            "itemtype": "method",
+            "name": "archiveBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 423,
+            "description": "Gets a list of build highlight names",
+            "itemtype": "method",
+            "name": "getHighlightScreenNames",
+            "return": {
+                "description": "With {string[]} List of build screen names",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 435,
+            "description": "Gets a specific highlight screen",
+            "itemtype": "method",
+            "name": "getHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Build screen",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 450,
+            "description": "Archives a specific highlight screen",
+            "itemtype": "method",
+            "name": "archiveHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of highlight screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/keyValueStorageAdapter.js",
+            "line": 468,
+            "description": "Type of class",
+            "itemtype": "property",
+            "name": "TYPE",
+            "type": "string",
+            "class": "KeyValueStorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 17,
+            "description": "Storage adapter constructor",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "build",
+                    "description": "Identifier of build",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 34,
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 36,
+            "description": "Initializes the source-adapter",
+            "itemtype": "method",
+            "name": "initialize",
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 45,
+            "description": "Gets the source-adapter promise",
+            "itemtype": "method",
+            "name": "getPromise",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 55,
+            "description": "Sets the promise",
+            "itemtype": "method",
+            "name": "setPromise",
+            "params": [
+                {
+                    "name": "promise",
+                    "description": "",
+                    "type": "Promise"
+                }
+            ],
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 66,
+            "description": "Gets the build information",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 75,
+            "description": "Sets the build information",
+            "itemtype": "method",
+            "name": "setBuild",
+            "params": [
+                {
+                    "name": "build",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 85,
+            "description": "Gets a list of currently approve screen names",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 95,
+            "description": "Gets a specific currently approved screen",
+            "itemtype": "method",
+            "name": "getCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 106,
+            "description": "Archives a specific currently approved screen",
+            "itemtype": "method",
+            "name": "archiveCurrentApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 119,
+            "description": "Gets a list of approve screen names",
+            "itemtype": "method",
+            "name": "getApprovedScreenNames",
+            "return": {
+                "description": "With {string[]} List of approved screen names",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 129,
+            "description": "Gets a specific approved screen",
+            "itemtype": "method",
+            "name": "getApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Approved screen",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 140,
+            "description": "Archives a specific approved screen",
+            "itemtype": "method",
+            "name": "archiveApprovedScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of approved screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 153,
+            "description": "Gets a list of build screen names",
+            "itemtype": "method",
+            "name": "getBuildScreenNames",
+            "return": {
+                "description": "With {string[]} List of build screen names",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 163,
+            "description": "Gets a specific build screen",
+            "itemtype": "method",
+            "name": "getBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage}",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 174,
+            "description": "Archives a specific build screen",
+            "itemtype": "method",
+            "name": "archiveBuildScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 187,
+            "description": "Gets a list of build highlight names",
+            "itemtype": "method",
+            "name": "getHighlightScreenNames",
+            "return": {
+                "description": "With {string[]} List of build screen names",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 197,
+            "description": "Gets a specific highlight screen",
+            "itemtype": "method",
+            "name": "getHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of build screen",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "With {PNGImage} Build screen",
+                "type": "Promise"
+            },
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 208,
+            "description": "Archives a specific highlight screen",
+            "itemtype": "method",
+            "name": "archiveHighlightScreen",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "Name of highlight screen",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Screen to archive",
+                    "type": "PNGImage"
+                }
+            ],
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "lib/storageAdapter/storageAdapter.js",
+            "line": 221,
+            "description": "Type of class",
+            "itemtype": "property",
+            "name": "TYPE",
+            "type": "string",
+            "class": "StorageAdapter"
+        },
+        {
+            "file": "index.js",
+            "line": 11,
+            "description": "Exported values",
+            "type": "{object}",
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 18,
+            "description": "Abstract storage adapter class",
+            "itemtype": "property",
+            "name": "StorageAdapter",
+            "type": "{StorageAdapter}",
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 26,
+            "description": "List of storage adapters",
+            "itemtype": "property",
+            "name": "storageAdapters",
+            "type": "{object}",
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 37,
+            "description": "Builds a storage adapter",
+            "itemtype": "method",
+            "name": "createStorageAdapter",
+            "params": [
+                {
+                    "name": "build",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "type",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "options",
+                            "description": "",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "connection",
+                            "description": "",
+                            "type": "ConnectionAdapter",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "StorageAdapter"
+            },
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 65,
+            "description": "Abstract connection adapter class",
+            "itemtype": "property",
+            "name": "ConnectionAdapter",
+            "type": "{ConnectionAdapter}",
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 73,
+            "description": "List of connection adapters",
+            "itemtype": "property",
+            "name": "connectionAdapters",
+            "type": "{object}",
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 83,
+            "description": "Builds a connection adapter",
+            "itemtype": "method",
+            "name": "createConnectionAdapter",
+            "params": [
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "type",
+                            "description": "",
+                            "type": "String"
+                        },
+                        {
+                            "name": "options",
+                            "description": "",
+                            "type": "Object",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "ConnectionAdapter"
+            },
+            "class": ""
+        },
+        {
+            "file": "index.js",
+            "line": 106,
+            "description": "Version of package",
+            "itemtype": "property",
+            "name": "version",
+            "type": "{string}",
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/storageAdapter/fileStorageAdapter.js:117"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/storageAdapter/fileStorageAdapter.js:129"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/storageAdapter/keyValueStorageAdapter.js:188"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/storageAdapter/keyValueStorageAdapter.js:208"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/storageAdapter/storageAdapter.js:66"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/connectionAdapter/connectionAdapter.js:34"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/keyValueModels/baseModel.js:33"
+        },
+        {
+            "message": "Missing item type\nType of class",
+            "line": " lib/keyValueModels/baseModel.js:66"
+        },
+        {
+            "message": "Missing item type\nLists the names of items",
+            "line": " lib/keyValueModels/company.js:51"
+        },
+        {
+            "message": "Missing item type\nGets a specific entry",
+            "line": " lib/keyValueModels/company.js:61"
+        },
+        {
+            "message": "Missing item type\nFilter for item",
+            "line": " lib/keyValueModels/company.js:71"
+        },
+        {
+            "message": "Missing item type\nLists the names of items",
+            "line": " lib/keyValueModels/department.js:31"
+        },
+        {
+            "message": "Missing item type\nGets a specific entry",
+            "line": " lib/keyValueModels/department.js:41"
+        },
+        {
+            "message": "Missing item type\nFilter for item",
+            "line": " lib/keyValueModels/department.js:51"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/storageAdapter/fileStorageAdapter.js:32"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/storageAdapter/keyValueStorageAdapter.js:36"
+        },
+        {
+            "message": "Missing item type\nStorage adapter constructor",
+            "line": " lib/storageAdapter/storageAdapter.js:17"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/storageAdapter/storageAdapter.js:34"
+        },
+        {
+            "message": "Missing item type\nGets the build information",
+            "line": " lib/storageAdapter/storageAdapter.js:66"
+        },
+        {
+            "message": "Missing item type\nExported values",
+            "line": " index.js:11"
+        }
+    ]
+}
