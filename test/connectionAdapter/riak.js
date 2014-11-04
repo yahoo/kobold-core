@@ -219,7 +219,7 @@ describe('Riak', function () {
 
 				this.sandbox = sinon.sandbox.create();
 
-				this.object = new Buffer(3);
+				this.object = [];
 				this.object[0] = 11;
 				this.object[1] = 12;
 				this.object[2] = 13;
