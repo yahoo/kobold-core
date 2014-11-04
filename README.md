@@ -3,6 +3,27 @@ Kobold-Core
 
 Core library for shared objects of the Kobold testing framework.
 
+
+[![Build Status](https://secure.travis-ci.org/yahoo/kobold-core.png)](http://travis-ci.org/yahoo/kobold-core)
+[![npm version](https://badge.fury.io/js/kobold-core.svg)](http://badge.fury.io/js/kobold-core)
+
+[![NPM](https://nodei.co/npm/kobold-core.png?downloads=true)](https://nodei.co/npm/kobold-core/)
+
+
+**Table of Contents**
+* [Installation](#installation)
+* [Usage](#usage)
+    * [Storage Adapter](#storage-adapter)
+        * [File Storage Adapter](#file-storage-adapter)
+        * [Key-Value Storage Adapter](#key-value-storage-adapter)
+    * [Connection Adapter](#connection-adapter)
+        * [Riak Connection Adapter](#riak-connection-adapter)
+* [API-Documentation](#api-documentation)
+* [Tests](#tests)
+* [Third-party libraries](#third-party-libraries)
+* [License](#license)
+
+
 ##Installation
 
 Install this module with the following command:
