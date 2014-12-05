@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v0.9.1
+v0.9.1 - 12/05/14
 * Add screen dependent config
 
 v0.9.0 - Initial release 11/04/14
