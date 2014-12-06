@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v0.9.2
+v0.9.2 - 12/05/14
 * Add config customization
 
 v0.9.1 - 12/05/14
