@@ -37,7 +37,7 @@ var core = {
 	/**
 	 * Builds a storage adapter
 	 *
-	 * @method createStorageAdapter
+	 * @method buildStorageAdapter
 	 * @param {string} build
 	 * @param {object} config
 	 * @param {string} config.type
@@ -53,7 +53,7 @@ var core = {
 		if (typeof type == 'string') {
 			AdapterClass = core.storageAdapters[type];
 			if (config.connection) {
-				adapterOptions.connection = this.createConnectionAdapter(config.connection);
+				adapterOptions.connection = this.buildConnectionAdapter(config.connection);
 			}
 			return new AdapterClass(build, adapterOptions);
 		} else {
@@ -83,7 +83,7 @@ var core = {
 	/**
 	 * Builds a connection adapter
 	 *
-	 * @method createConnectionAdapter
+	 * @method buildConnectionAdapter
 	 * @param {object} config
 	 * @param {string} config.type
 	 * @param {object} [config.options]
