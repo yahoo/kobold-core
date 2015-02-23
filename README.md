@@ -8,6 +8,7 @@ Core library for shared objects of the Kobold testing framework.
 [![npm version](https://badge.fury.io/js/kobold-core.svg)](http://badge.fury.io/js/kobold-core)
 
 [![NPM](https://nodei.co/npm/kobold-core.png?downloads=true)](https://nodei.co/npm/kobold-core/)
+[![NPM](https://nodei.co/npm-dl/kobold-core.png?months=3&height=2)](https://nodei.co/npm/kobold-core/)
 
 
 [API-Documentation](http://yahoo.github.io/kobold-core/docs/)
@@ -188,6 +189,7 @@ The following third-party libraries are used by this module:
 
 ###Dev-Dependencies
 * chai: http://chaijs.com
+* coveralls: https://github.com/cainus/node-coveralls
 * istanbul: https://github.com/gotwarlost/istanbul
 * mocha: https://github.com/visionmedia/mocha
 * sinon: http://cjohansen.no/sinon/
