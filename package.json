@@ -1,6 +1,6 @@
 {
   "name": "kobold-core",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Core library for shared objects of the Kobold testing framework.",
   "license": "MIT",
   "main": "index.js",
@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "pngjs-image": "~0.9.3",
-    "preceptor-core": "~0.9.0",
+    "preceptor-core": "~0.9.6",
+    "blink-diff": "~1.0.7",
     "promise": "6.0.0",
     "request": "2.42.0",
     "uuid": "1.4.1"

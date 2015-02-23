@@ -1,13 +1,6 @@
 // Copyright 2014, Yahoo! Inc.
 // Copyrights licensed under the Mit License. See the accompanying LICENSE file for terms.
 
-var ConnectionAdapter = require('./lib/connectionAdapter/connectionAdapter');
-var RiakConnectionAdapter = require('./lib/connectionAdapter/riakConnectionAdapter');
-
-var StorageAdapter = require('./lib/storageAdapter/storageAdapter');
-var FileStorageAdapter = require('./lib/storageAdapter/fileStorageAdapter');
-var KeyValueStorageAdapter = require('./lib/storageAdapter/keyValueStorageAdapter');
-
 /**
  * Exported values
  *
@@ -16,12 +9,53 @@ var KeyValueStorageAdapter = require('./lib/storageAdapter/keyValueStorageAdapte
 var core = {
 
 	/**
+	 * Abstract comparison adapter class
+	 *
+	 * @property ComparisonAdapter
+	 * @type {ComparisonAdapter}
+	 */
+	ComparisonAdapter: require('./lib/comparisonAdapter/comparisonAdapter'),
+
+	/**
+	 * List of comparison adapters
+	 *
+	 * @property comparisonAdapters
+	 * @type {object}
+	 */
+	comparisonAdapters: {
+		"blinkdiff": require('./lib/comparisonAdapter/blinkDiffAdapter')
+	},
+
+	/**
+	 * Builds a comparison adapter
+	 *
+	 * @method buildComparisonAdapter
+	 * @param {object} config
+	 * @param {string} config.type
+	 * @param {object} [config.options]
+	 * @return {ComparisonAdapter}
+	 */
+	buildComparisonAdapter: function (config) {
+		var type = config.type,
+			adapterOptions = config.options || {},
+			AdapterClass;
+
+		if (typeof type == 'string') {
+			AdapterClass = core.comparisonAdapters[type.toLowerCase()];
+			return new AdapterClass(adapterOptions);
+		} else {
+			return type; // Use as instance instead
+		}
+	},
+
+
+	/**
 	 * Abstract storage adapter class
 	 *
 	 * @property StorageAdapter
 	 * @type {StorageAdapter}
 	 */
-	StorageAdapter: StorageAdapter,
+	StorageAdapter: require('./lib/storageAdapter/storageAdapter'),
 
 	/**
 	 * List of storage adapters
@@ -30,8 +64,8 @@ var core = {
 	 * @type {object}
 	 */
 	storageAdapters: {
-		"File": FileStorageAdapter,
-		"KeyValue": KeyValueStorageAdapter
+		"file": require('./lib/storageAdapter/fileStorageAdapter'),
+		"keyvalue": require('./lib/storageAdapter/keyValueStorageAdapter')
 	},
 
 	/**
@@ -51,7 +85,7 @@ var core = {
 			AdapterClass;
 
 		if (typeof type == 'string') {
-			AdapterClass = core.storageAdapters[type];
+			AdapterClass = core.storageAdapters[type.toLowerCase()];
 			if (config.connection) {
 				adapterOptions.connection = this.buildConnectionAdapter(config.connection);
 			}
@@ -68,7 +102,7 @@ var core = {
 	 * @property ConnectionAdapter
 	 * @type {ConnectionAdapter}
 	 */
-	ConnectionAdapter: ConnectionAdapter,
+	ConnectionAdapter: require('./lib/connectionAdapter/connectionAdapter'),
 
 	/**
 	 * List of connection adapters
@@ -77,7 +111,7 @@ var core = {
 	 * @type {object}
 	 */
 	connectionAdapters: {
-		"Riak": RiakConnectionAdapter
+		"riak": require('./lib/connectionAdapter/riakConnectionAdapter')
 	},
 
 	/**
@@ -95,7 +129,7 @@ var core = {
 			AdapterClass;
 
 		if (typeof type == 'string') {
-			AdapterClass = core.connectionAdapters[type];
+			AdapterClass = core.connectionAdapters[type.toLowerCase()];
 			return new AdapterClass(adapterOptions);
 		} else {
 			return type; // Use as instance instead
