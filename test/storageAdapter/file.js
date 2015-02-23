@@ -63,17 +63,26 @@ describe('File', function () {
 
 		it('should combine paths', function () {
 
-			var instance = new FileStorageAdapter("build1", {
-				path: "test-path",
+			var basePath = path.join(__dirname, "test-path"),
+				approvedPath = path.join(basePath, "folder1"),
+				buildPath = "/folder2",
+				highlightPath = path.join(basePath, "folder3"),
+				configPath = path.join(basePath, "folder4"),
+				instance;
+
+			instance = new FileStorageAdapter("build1", {
+				path: basePath,
 				approvedFolderName: 'folder1',
-				buildFolderName: 'folder2',
-				highlightFolderName: 'folder3'
+				buildFolderName: '/folder2',
+				highlightFolderName: 'folder3',
+				configFolderName: 'folder4'
 			});
 
-			expect(instance._getPath()).to.be.equal('test-path');
-			expect(instance._getApprovedPath()).to.be.equal('test-path/folder1');
-			expect(instance._getBuildPath()).to.be.equal('test-path/folder2');
-			expect(instance._getHighlightPath()).to.be.equal('test-path/folder3');
+			expect(instance._getPath()).to.be.equal(basePath);
+			expect(instance._getApprovedPath()).to.be.equal(approvedPath);
+			expect(instance._getBuildPath()).to.be.equal(buildPath);
+			expect(instance._getHighlightPath()).to.be.equal(highlightPath);
+			expect(instance._getConfigPath()).to.be.equal(configPath);
 		});
 	});
 
@@ -107,7 +116,7 @@ describe('File', function () {
 			});
 
 			it('should filter PNG files', function () {
-				var files = this.instance._readDirAndFilter("dir/test");
+				var files = this.instance._readDirAndFilter(path.join("dir", "test"));
 				expect(files).to.be.deep.equal(["test1", "test2", "test4"]);
 			});
 		});
@@ -121,9 +130,11 @@ describe('File', function () {
 			});
 
 			it('should load a file', function (done) {
+				var filePath = path.join(__dirname, 'test-path', 'approved', 'approved2.png');
+
 				promiseCheck(this.instance.getCurrentApprovedScreen('approved2'), function (filePath) {
 					expect(this.readImageStub.callCount).to.be.equal(1);
-					expect(filePath).to.be.equal('test-path/approved/approved2.png');
+					expect(filePath).to.be.equal(filePath);
 				}.bind(this), done);
 			});
 
@@ -160,9 +171,11 @@ describe('File', function () {
 			});
 
 			it('should load a file', function (done) {
+				var filePath = path.join(__dirname, 'test-path', 'build', 'build2.png');
+
 				promiseCheck(this.instance.getBuildScreen('build2'), function (filePath) {
 					expect(this.readImageStub.callCount).to.be.equal(1);
-					expect(filePath).to.be.equal('test-path/build/build2.png');
+					expect(filePath).to.be.equal(filePath);
 				}.bind(this), done);
 			});
 
@@ -180,9 +193,11 @@ describe('File', function () {
 			});
 
 			it('should load a file', function (done) {
+				var filePath = path.join(__dirname, 'test-path', 'highlight', 'highlight2.png');
+
 				promiseCheck(this.instance.getHighlightScreen('highlight2'), function (filePath) {
 					expect(this.readImageStub.callCount).to.be.equal(1);
-					expect(filePath).to.be.equal('test-path/highlight/highlight2.png');
+					expect(filePath).to.be.equal(filePath);
 				}.bind(this), done);
 			});
 
