@@ -193,6 +193,7 @@ The following third-party libraries are used by this module:
 * istanbul: https://github.com/gotwarlost/istanbul
 * mocha: https://github.com/visionmedia/mocha
 * sinon: http://cjohansen.no/sinon/
+* sinon-chai: https://github.com/domenic/sinon-chai
 * yuidocjs: https://github.com/yui/yuidoc
 
 ##License

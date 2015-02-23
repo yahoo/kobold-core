@@ -3,7 +3,7 @@ var FileStorageAdapter = require('../../').storageAdapters.file;
 var Promise = require('promise');
 var expect = require('chai').expect;
 var sinon = require('sinon');
-var promiseCheck = require('../utils').promiseCheck;
+var promiseCheck = require('../helper').promiseCheck;
 var path = require('path');
 
 describe('File', function () {

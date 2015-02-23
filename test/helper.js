@@ -19,6 +19,20 @@ module.exports = {
 		}, function (err) {
 			done(err);
 		});
+	},
+
+	/**
+	 * Checks if an exception will be thrown when a function is called
+	 *
+	 * @param {function} fn
+	 */
+	checkForException: function (fn) {
+		try {
+			fn();
+			throw new Error('No exception was thrown.');
+		} catch (err) {
+			// Do nothing - success
+		}
 	}
 
 };
