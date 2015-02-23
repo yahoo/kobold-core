@@ -1,4 +1,4 @@
-var FileStorageAdapter = require('../../').storageAdapters.File;
+var FileStorageAdapter = require('../../').storageAdapters.file;
 
 var Promise = require('promise');
 var expect = require('chai').expect;

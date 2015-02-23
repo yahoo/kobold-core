@@ -1,4 +1,4 @@
-var RiakConnectionAdapter = require('../../').connectionAdapters.Riak;
+var RiakConnectionAdapter = require('../../').connectionAdapters.riak;
 
 var Promise = require('promise');
 var expect = require('chai').expect;
