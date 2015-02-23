@@ -1,6 +1,9 @@
 Changelog
 =========
 
+v0.9.3
+* Add support for Node 0.12
+
 v0.9.2 - 12/05/14
 * Add config customization
 
