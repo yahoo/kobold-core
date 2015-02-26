@@ -6,6 +6,7 @@ v0.9.3
 * Allow absolute paths for file-adapter folders
 * Add abstract comparison adapter
 * Add blink-diff as comparison adapter
+* Add shell comparison adapter
 
 v0.9.2 - 12/05/14
 * Add config customization

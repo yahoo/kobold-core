@@ -23,7 +23,8 @@ var core = {
 	 * @type {object}
 	 */
 	comparisonAdapters: {
-		"blinkdiff": require('./lib/comparisonAdapter/blinkDiffAdapter')
+		"blinkdiff": require('./lib/comparisonAdapter/blinkDiffAdapter'),
+		"shell": require('./lib/comparisonAdapter/shellAdapter')
 	},
 
 	/**
