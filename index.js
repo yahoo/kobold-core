@@ -24,6 +24,7 @@ var core = {
 	 */
 	comparisonAdapters: {
 		"blinkdiff": require('./lib/comparisonAdapter/blinkDiffAdapter'),
+		"perceptualdiff": require('./lib/comparisonAdapter/perceptualDiffAdapter'),
 		"shell": require('./lib/comparisonAdapter/shellAdapter')
 	},
 

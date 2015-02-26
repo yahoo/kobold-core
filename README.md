@@ -181,6 +181,7 @@ The code-coverage will be written to the ```coverage``` folder in the module roo
 The following third-party libraries are used by this module:
 
 ###Dependencies
+* blink-diff: https://github.com/yahoo/blink-diff
 * pngjs-image: https://github.com/yahoo/pngjs-image
 * preceptor-core: https://github.com/yahoo/preceptor-core
 * promise: https://github.com/then/promise
@@ -192,6 +193,7 @@ The following third-party libraries are used by this module:
 * coveralls: https://github.com/cainus/node-coveralls
 * istanbul: https://github.com/gotwarlost/istanbul
 * mocha: https://github.com/visionmedia/mocha
+* perceptualdiff: https://github.com/marcelerz/node-perceptualdiff
 * sinon: http://cjohansen.no/sinon/
 * sinon-chai: https://github.com/domenic/sinon-chai
 * yuidocjs: https://github.com/yui/yuidoc
