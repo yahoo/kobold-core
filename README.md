@@ -3,18 +3,20 @@ Kobold-Core
 
 Core library for shared objects of the Kobold testing framework.
 
+[![Build Status](https://img.shields.io/travis/yahoo/kobold-core.svg)](http://travis-ci.org/yahoo/kobold-core)
+[![Coveralls Coverage](https://img.shields.io/coveralls/yahoo/kobold-core.svg)](https://coveralls.io/r/yahoo/kobold-core)
+[![Code Climate Grade](https://img.shields.io/codeclimate/github/yahoo/kobold-core.svg)](https://codeclimate.com/github/yahoo/kobold-core)
 
-[![Build Status](https://secure.travis-ci.org/yahoo/kobold-core.png)](http://travis-ci.org/yahoo/kobold-core)
-[![npm version](https://badge.fury.io/js/kobold-core.svg)](http://badge.fury.io/js/kobold-core)
+[![NPM version](https://badge.fury.io/js/kobold-core.svg)](https://www.npmjs.com/package/kobold-core)
+[![NPM License](https://img.shields.io/npm/l/blink-diff.svg)](https://www.npmjs.com/package/kobold-core)
 
-[![NPM](https://nodei.co/npm/kobold-core.png?downloads=true)](https://nodei.co/npm/kobold-core/)
-[![NPM](https://nodei.co/npm-dl/kobold-core.png?months=3&height=2)](https://nodei.co/npm/kobold-core/)
+[![NPM](https://nodei.co/npm/kobold-core.png?downloads=true&stars=true)](https://www.npmjs.com/package/kobold-core)
+[![NPM](https://nodei.co/npm-dl/kobold-core.png?months=3&height=2)](https://www.npmjs.com/package/kobold-core)
 
+[![Coverage Report](https://img.shields.io/badge/Coverage_Report-Available-blue.svg)](http://yahoo.github.io/kobold-core/coverage/lcov-report/)
+[![API Documentation](https://img.shields.io/badge/API_Documentation-Available-blue.svg)](http://yahoo.github.io/kobold-core/docs/)
 
-[API-Documentation](http://yahoo.github.io/kobold-core/docs/)
-
-[Coverage Report](http://yahoo.github.io/kobold-core/coverage/lcov-report/)
-
+[![Gitter Support](https://img.shields.io/badge/Support-Gitter_IM-yellow.svg)](https://gitter.im/preceptorjs/support)
 
 **Table of Contents**
 * [Installation](#installation)
