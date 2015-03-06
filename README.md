@@ -8,7 +8,7 @@ Core library for shared objects of the Kobold testing framework.
 [![Code Climate Grade](https://img.shields.io/codeclimate/github/yahoo/kobold-core.svg)](https://codeclimate.com/github/yahoo/kobold-core)
 
 [![NPM version](https://badge.fury.io/js/kobold-core.svg)](https://www.npmjs.com/package/kobold-core)
-[![NPM License](https://img.shields.io/npm/l/blink-diff.svg)](https://www.npmjs.com/package/kobold-core)
+[![NPM License](https://img.shields.io/npm/l/kobold-core.svg)](https://www.npmjs.com/package/kobold-core)
 
 [![NPM](https://nodei.co/npm/kobold-core.png?downloads=true&stars=true)](https://www.npmjs.com/package/kobold-core)
 [![NPM](https://nodei.co/npm-dl/kobold-core.png?months=3&height=2)](https://www.npmjs.com/package/kobold-core)
