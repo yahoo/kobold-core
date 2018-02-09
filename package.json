@@ -32,7 +32,7 @@
     "preceptor-core": "~0.9.6",
     "blink-diff": "~1.0.7",
     "promise": "6.0.0",
-    "request": "2.42.0",
+    "request": "2.83.0",
     "uuid": "1.4.1"
   },
   "devDependencies": {
